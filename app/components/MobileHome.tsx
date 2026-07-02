@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   bestSellers,
   catalogueColumns,
+  collectionItems,
   services,
 } from "../lib/content";
 import { ServiceIcon } from "./ServiceIcon";
@@ -34,7 +35,7 @@ export default function MobileHome() {
             KULT Pro
           </Link>
           <Image src="/assets/shopping-bag.svg" alt="Panier" width={34} height={34} className="h-8 w-8" />
-          <span className="text-[22px] font-bold leading-none text-kult-violet sm:text-[26px]">FR</span>
+          <span className="text-[22px] font-bold leading-none text-black sm:text-[26px]">FR</span>
         </div>
       </header>
 
@@ -89,14 +90,29 @@ export default function MobileHome() {
           </h2>
           <p className="mt-2 text-[15px] sm:text-[18px]">Pour un été sur palm beach réussi</p>
           <div className="mt-6 grid grid-cols-2 gap-4">
-            <div className="relative col-span-2 aspect-[653/648] overflow-hidden">
-              <Image src="/assets/collec-572.png" alt="Collection du mois" fill className="object-cover" sizes="100vw" />
+            {/* main image with label */}
+            <div className="relative col-span-2 aspect-[435/432] overflow-hidden">
+              <Image src={collectionItems.main.img} alt={collectionItems.main.name} fill className="object-cover" sizes="100vw" />
+              <div className="absolute bottom-3 left-3">
+                <p className="text-[13px] font-bold leading-none text-black drop-shadow-sm">{collectionItems.main.name}</p>
+                <p className="mt-1 text-[15px] font-medium italic leading-none text-black drop-shadow-sm">{collectionItems.main.price}</p>
+              </div>
             </div>
+            {/* top small + label pill */}
             <div className="relative aspect-square overflow-hidden">
-              <Image src="/assets/collec-573.png" alt="Bougie citron" fill className="object-cover" sizes="50vw" />
+              <Image src={collectionItems.top.img} alt={collectionItems.top.name} fill className="object-cover" sizes="50vw" />
+              <div className="absolute bottom-2 left-2 bg-black px-2.5 py-1.5">
+                <p className="text-[11px] font-bold leading-none text-white">{collectionItems.top.name}</p>
+                <p className="mt-0.5 text-[13px] font-medium italic leading-none text-white">{collectionItems.top.price}</p>
+              </div>
             </div>
+            {/* bottom small + label pill */}
             <div className="relative aspect-square overflow-hidden">
-              <Image src="/assets/collec-574.png" alt="Diffuseur" fill className="object-cover" sizes="50vw" />
+              <Image src={collectionItems.bottom.img} alt={collectionItems.bottom.name} fill className="object-cover" sizes="50vw" />
+              <div className="absolute bottom-2 left-2 bg-black px-2.5 py-1.5">
+                <p className="text-[11px] font-bold leading-none text-white">{collectionItems.bottom.name}</p>
+                <p className="mt-0.5 text-[13px] font-medium italic leading-none text-white">{collectionItems.bottom.price}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -105,9 +121,10 @@ export default function MobileHome() {
       {/* ===== A propos ===== */}
       <section className="relative flex aspect-[1738/340] w-full items-center justify-center overflow-hidden">
         <Image src="/assets/about.png" alt="À propos de nous" fill className="object-cover" sizes="100vw" />
-        <h2 className="relative z-10 text-[28px] font-light tracking-tight text-black sm:text-[44px]">
+        <div className="absolute inset-0 bg-kult-pink-soft/40" />
+        <span className="relative z-10 rounded-full bg-black px-6 py-3 text-[22px] font-semibold text-white sm:px-8 sm:py-4 sm:text-[32px]">
           A propos de nous
-        </h2>
+        </span>
       </section>
 
       {/* ===== Notre catalogue ===== */}
@@ -115,7 +132,6 @@ export default function MobileHome() {
         <h2 className="text-[28px] font-light leading-tight tracking-tight sm:text-[40px]">
           NOTRE CATALOGUE
         </h2>
-        <p className="mt-2 text-[15px] sm:text-[18px]">Pour ceux avide de...</p>
 
         <div className="mt-6 grid grid-cols-3 gap-3 sm:gap-4">
           {catalogueColumns.map((col, ci) => (
