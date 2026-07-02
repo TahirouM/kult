@@ -24,6 +24,76 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ============ KULT Pro (B2B) — Palm Beach Pop theme tokens ============ */
+.kult-pro {
+  --bg: #ffffff;
+  --ink: #111111;
+  --muted: #7a7a7a;
+  --line: #ececec;
+  --accent: #39b89a;
+  --accent-ink: #ffffff;
+  --surface: #fffbc3;
+  --surface2: #fec9d7;
+  --card-bg: #f7f7f7;
+  --radius: 0px;
+  --card-radius: 0px;
+  --img-radius: 0px;
+  --tile-shadow: none;
+  --sec-pad: 80px;
+
+  /* status colors (shared across themes) */
+  --st-confirmed: #3c91e6;
+  --st-preparing: #e6a23c;
+  --st-shipped: #39b89a;
+  --st-delivered: #2b9d6e;
+
+  background: var(--bg);
+  color: var(--ink);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes pulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(43, 157, 110, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(43, 157, 110, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(43, 157, 110, 0);
+  }
+}
+@keyframes toastIn {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeUp {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.pulse-dot {
+  animation: pulseDot 1.8s infinite;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

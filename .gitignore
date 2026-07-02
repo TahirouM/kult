@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# design handoff source material (reference only; assets copied to /public/pro)
+/design_handoff_espace_pro
+
 # next.js
 /.next/
 /out/

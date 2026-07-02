@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FigmaCanvas, FBox } from "./components/FigmaCanvas";
 import MobileHome from "./components/MobileHome";
+import ProTeaser from "./components/ProTeaser";
 import { bestSellers, catalogue } from "./lib/content";
 
 const CANVAS_H = 7855;
@@ -233,6 +234,8 @@ export default function Home() {
           <span className="text-[24px] font-medium italic leading-none text-white">NOS RESEAUX :</span>
         </FBox>
         </FigmaCanvas>
+        {/* Pro teaser under the desktop canvas */}
+        <ProTeaser />
       </div>
     </main>
   );

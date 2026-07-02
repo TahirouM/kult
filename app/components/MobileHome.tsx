@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   bestSellers,
   catalogueColumns,
   services,
 } from "../lib/content";
 import { ServiceIcon } from "./ServiceIcon";
+import ProTeaser from "./ProTeaser";
 
 /** Fluid, stacked layout used below the `lg` breakpoint. */
 export default function MobileHome() {
@@ -28,6 +30,9 @@ export default function MobileHome() {
           <Image src="/assets/logo-blanc.png" alt="KULT Collection" fill className="object-contain" />
         </div>
         <div className="relative z-10 flex items-center gap-2">
+          <Link href="/pro" className="hidden text-[13px] font-semibold text-black sm:inline">
+            KULT Pro
+          </Link>
           <Image src="/assets/shopping-bag.svg" alt="Panier" width={34} height={34} className="h-8 w-8" />
           <span className="text-[22px] font-bold leading-none text-kult-violet sm:text-[26px]">FR</span>
         </div>
@@ -37,6 +42,9 @@ export default function MobileHome() {
       <div className="relative aspect-[1728/885] w-full">
         <Image src="/assets/hero.png" alt="Bougie KULT au bord de la piscine" fill priority className="object-cover" />
       </div>
+
+      {/* ===== Pro teaser ===== */}
+      <ProTeaser />
 
       {/* ===== Best Sellers ===== */}
       <section className="px-4 py-12 sm:px-6">
