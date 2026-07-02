@@ -1,32 +1,21 @@
 import Image from "next/image";
 import { FigmaCanvas, FBox } from "./components/FigmaCanvas";
+import MobileHome from "./components/MobileHome";
+import { bestSellers, catalogue } from "./lib/content";
 
 const CANVAS_H = 7855;
-
-const bestSellers = [
-  { img: "/assets/bs-1.png", x: 70, name: "BOUGIE VIOLETTE", price: "23.00€" },
-  { img: "/assets/bs-2.png", x: 561, name: "BOUGIE LAIT D'AMANDE", price: "23.00€" },
-  { img: "/assets/bs-3.png", x: 1052, name: "DIFFUSEUR COCO & TONKA", price: "25.00€" },
-  { img: "/assets/bs-4.png", x: 1546, name: "", price: "" },
-];
-
-// Catalogue tiles: exact Figma x/y/w/h
-const catalogue = [
-  { img: "/assets/cat-548.png", x: 12, y: 4026, w: 559, h: 608 },
-  { img: "/assets/cat-543.png", x: 12, y: 4661, w: 559, h: 518 },
-  { img: "/assets/cat-545.png", x: 12, y: 5206, w: 559, h: 915 },
-  { img: "/assets/cat-540.png", x: 584, y: 4026, w: 559, h: 535 },
-  { img: "/assets/cat-542.png", x: 584, y: 4588, w: 559, h: 753 },
-  { img: "/assets/cat-546.png", x: 584, y: 5368, w: 559, h: 753 },
-  { img: "/assets/cat-541.png", x: 1156, y: 4026, w: 559, h: 608 },
-  { img: "/assets/cat-544.png", x: 1156, y: 4661, w: 559, h: 895 },
-  { img: "/assets/cat-547.png", x: 1156, y: 5583, w: 559, h: 538 },
-];
 
 export default function Home() {
   return (
     <main className="w-full overflow-x-hidden bg-white">
-      <FigmaCanvas height={CANVAS_H}>
+      {/* Mobile / tablet: fluid stacked layout (< lg) */}
+      <div className="lg:hidden">
+        <MobileHome />
+      </div>
+
+      {/* Desktop: pixel-faithful Figma canvas (>= lg) */}
+      <div className="hidden lg:block">
+        <FigmaCanvas height={CANVAS_H}>
         {/* ============ HERO (Slide 16:9) — pink band 0..1097 ============ */}
         <FBox x={0} y={0} w={1728} h={1097} className="overflow-hidden bg-kult-pink">
           {/* Vertical stripes (_Слой_1): 1223x3053 rotated 90°, sitting to the right.
@@ -243,7 +232,8 @@ export default function Home() {
         <FBox x={1120} y={7566}>
           <span className="text-[24px] font-medium italic leading-none text-white">NOS RESEAUX :</span>
         </FBox>
-      </FigmaCanvas>
+        </FigmaCanvas>
+      </div>
     </main>
   );
 }
