@@ -1,7 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FigmaCanvas, FBox } from "./components/FigmaCanvas";
 import MobileHome from "./components/MobileHome";
-import ProTeaser from "./components/ProTeaser";
 import { bestSellers, catalogue, collectionItems } from "./lib/content";
 
 const CANVAS_H = 6633;
@@ -53,6 +53,17 @@ export default function Home() {
           {/* Cart 46x46 at 1520,28 */}
           <FBox x={1520} y={28} w={46} h={46}>
             <Image src="/assets/shopping-bag.svg" alt="Panier" fill />
+          </FBox>
+
+          {/* KULT Pro link (added — not in Figma header, gives desktop access to /pro) */}
+          <FBox x={1220} y={40} w={230} h={30}>
+            <Link
+              href="/pro"
+              className="inline-flex items-center gap-2 text-[22px] font-semibold leading-none text-black transition-opacity hover:opacity-70"
+            >
+              <span className="h-2 w-2 rounded-full bg-kult-violet" />
+              KULT Pro
+            </Link>
           </FBox>
 
           {/* FR at 1571,33 36px bold black */}
@@ -221,8 +232,6 @@ export default function Home() {
             <span className="text-[24px] font-medium italic leading-none text-white">NOS RESEAUX :</span>
           </FBox>
         </FigmaCanvas>
-        {/* Pro teaser under the desktop canvas */}
-        <ProTeaser />
       </div>
     </main>
   );

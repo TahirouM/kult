@@ -31,8 +31,9 @@ export default function MobileHome() {
           <Image src="/assets/logo-blanc.png" alt="KULT Collection" fill className="object-contain" />
         </div>
         <div className="relative z-10 flex items-center gap-2">
-          <Link href="/pro" className="hidden text-[13px] font-semibold text-black sm:inline">
-            KULT Pro
+          <Link href="/pro" className="inline-flex items-center gap-1 text-[12px] font-semibold text-black sm:text-[13px]">
+            <span className="h-1.5 w-1.5 rounded-full bg-kult-violet" />
+            Pro
           </Link>
           <Image src="/assets/shopping-bag.svg" alt="Panier" width={34} height={34} className="h-8 w-8" />
           <span className="text-[22px] font-bold leading-none text-black sm:text-[26px]">FR</span>
