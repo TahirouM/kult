@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const categories = [
-  { label: "Bougies", href: "/pro/portail/catalogue?cat=bougies" },
-  { label: "Céramiques", href: "/pro/portail/catalogue?cat=ceramiques" },
-  { label: "Parfums", href: "/pro/portail/catalogue?cat=parfums" },
-  { label: "Florale", href: "/pro/portail/catalogue?cat=florale" },
-  { label: "Autres", href: "/pro/portail/catalogue?cat=autres" },
+  { label: "Bougies", href: "/catalogue?cat=bougies" },
+  { label: "Céramiques", href: "/catalogue?cat=ceramiques" },
+  { label: "Parfums", href: "/catalogue?cat=parfums" },
+  { label: "Florale", href: "/catalogue?cat=florale" },
+  { label: "Autres", href: "/catalogue?cat=autres" },
 ];
 
 /**
@@ -51,17 +51,19 @@ export default function BurgerMenu({
     setCatalogueOpen(false);
   };
 
-  // Scroll to an on-page section by id. Both the mobile and desktop layouts
-  // declare the same anchor ids, but only one layout is visible at a time;
-  // pick the anchor that is actually rendered (has an offsetParent).
-  const goToSection = (id: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
+  // Contact = the footer on the homepage. If already on "/", smooth-scroll to
+  // the visible #contact anchor; otherwise navigate to /#contact.
+  const goToContact = (e: React.MouseEvent) => {
     close();
-    requestAnimationFrame(() => {
-      const targets = Array.from(document.querySelectorAll<HTMLElement>(`#${id}`));
-      const visible = targets.find((el) => el.offsetParent !== null) || targets[0];
-      visible?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      requestAnimationFrame(() => {
+        const targets = Array.from(document.querySelectorAll<HTMLElement>("#contact"));
+        const visible = targets.find((el) => el.offsetParent !== null) || targets[0];
+        visible?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+    // else: let the <a href="/#contact"> navigate to the home + anchor
   };
 
   return (
@@ -148,8 +150,8 @@ export default function BurgerMenu({
 
           <MenuLink href="/a-propos" label="À propos de nous" onClick={close} />
           <a
-            href="#contact"
-            onClick={goToSection("contact")}
+            href="/#contact"
+            onClick={goToContact}
             className="font-display block border-b border-black/15 py-4 text-[26px] font-bold text-black"
           >
             Contact

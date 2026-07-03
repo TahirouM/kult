@@ -146,3 +146,20 @@ export function getProduct(slug: string): Product | undefined {
 export function relatedProducts(slug: string, count = 3): Product[] {
   return products.filter((p) => p.slug !== slug).slice(0, count);
 }
+
+// Public catalogue categories (menu order). `slug` matches ?cat= and the label
+// is compared case-insensitively against Product.category.
+export const CATEGORIES = [
+  { slug: "bougies", label: "Bougies" },
+  { slug: "ceramiques", label: "Céramiques" },
+  { slug: "parfums", label: "Parfums" },
+  { slug: "florale", label: "Florale" },
+  { slug: "autres", label: "Autres" },
+] as const;
+
+export function productsByCategory(catSlug?: string): Product[] {
+  if (!catSlug || catSlug === "tous") return products;
+  const cat = CATEGORIES.find((c) => c.slug === catSlug);
+  if (!cat) return products;
+  return products.filter((p) => p.category.toLowerCase() === cat.label.toLowerCase());
+}
