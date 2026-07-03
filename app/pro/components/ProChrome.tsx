@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { CATS } from "../data";
 import { usePro } from "../ProContext";
+import BurgerMenu from "../../components/BurgerMenu";
 
 const PROMO = [
   "Frais de port offerts à partir de 35€",
@@ -42,6 +43,11 @@ export function ProHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-[color:var(--line)] bg-[color:var(--bg)]">
       <div className="mx-auto flex h-[88px] max-w-[1320px] items-center justify-between gap-6 px-6 md:px-10">
+        {/* burger menu */}
+        <div className="flex shrink-0 items-center">
+          <BurgerMenu barWidth={40} barHeight={5} gap={5} />
+        </div>
+
         {/* search */}
         <div className="hidden min-w-0 flex-1 items-center gap-2 border border-[color:var(--line)] px-3 py-2.5 md:flex md:max-w-[280px]">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="1.6">
