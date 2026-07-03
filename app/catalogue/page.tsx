@@ -3,6 +3,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import BurgerMenu from "../components/BurgerMenu";
+import { ServiceIcon } from "../components/ServiceIcon";
+import { services } from "../lib/content";
 import CatalogueGrid from "./CatalogueGrid";
 
 export const metadata: Metadata = {
@@ -33,6 +35,47 @@ export default function CataloguePage() {
       <Suspense fallback={null}>
         <CatalogueGrid />
       </Suspense>
+
+      {/* ===== "Créez des intérieurs qui vous ressemble" ===== */}
+      <section className="relative w-full overflow-hidden py-16 sm:py-24">
+        {/* monstera leaves background */}
+        <div className="pointer-events-none absolute inset-0 -z-0 opacity-60">
+          <Image src="/assets/logo-motif-rose-2.png" alt="" fill className="object-cover" />
+        </div>
+        <div className="relative z-10 mx-auto w-full max-w-[1000px] px-5 sm:px-10">
+          <h2 className="font-display mb-10 text-center text-[28px] font-bold leading-tight text-black sm:text-[40px]">
+            Créez des intérieurs qui vous ressemble
+          </h2>
+          <div className="grid grid-cols-3 gap-4 sm:gap-6">
+            <div className="relative col-span-2 aspect-[4/3] overflow-hidden">
+              <Image src="/assets/collec-572.png" alt="Intérieur KULT" fill className="object-cover" sizes="(max-width:640px) 66vw, 640px" />
+            </div>
+            <div className="flex flex-col gap-4 sm:gap-6">
+              <div className="relative aspect-square overflow-hidden">
+                <Image src="/assets/bs-1.png" alt="Bougie KULT" fill className="object-cover" sizes="320px" />
+              </div>
+              <div className="relative aspect-square overflow-hidden">
+                <Image src="/assets/collec-574.png" alt="Diffuseur KULT" fill className="object-cover" sizes="320px" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Services banner ===== */}
+      <section className="mx-auto w-full max-w-[1608px] px-5 py-12 sm:px-10">
+        <div className="grid grid-cols-1 divide-y divide-neutral-300 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          {services.map((s, i) => (
+            <div key={i} className="flex flex-col items-center gap-3 px-6 py-8 text-center text-neutral-700">
+              <ServiceIcon type={s.icon} />
+              <div>
+                <p className="text-[15px] font-light tracking-wide sm:text-[18px]">{s.title}</p>
+                <p className="mt-1 text-[14px] font-light">{s.subtitle}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* ===== Footer ===== */}
       <footer id="contact" className="w-full bg-black text-white">

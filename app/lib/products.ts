@@ -137,6 +137,259 @@ export const products: Product[] = [
       ["Colisage", "Vendue à l'unité"],
     ],
   },
+
+  // ---- Bougies ----
+  {
+    slug: "bougie-pamplemousse-rose-vanille",
+    name: "Bougie Pamplemousse Rose & Vanille",
+    eyebrow: "BOUGIE PARFUMÉE · 180G",
+    price: "23.00€",
+    img: "/assets/cat-540.png",
+    category: "Bougies",
+    description:
+      "Pamplemousse rose pétillant adouci d'une vanille crémeuse. Coulée à la main dans un verre rayé signature. Mèche coton, cire végétale, 45h de combustion.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [
+      { label: "Bougie · 180g — 23.00€", price: "23.00€" },
+      { label: "Grand format · 320g — 34.00€", price: "34.00€" },
+    ],
+    details: [
+      ["Contenance", "180 g · env. 45h de combustion"],
+      ["Matière", "Cire végétale, mèche coton"],
+      ["Parfum", "Pamplemousse rose & vanille"],
+      ["Origine", "Coulée à la main en France"],
+      ["Colisage", "Vendue à l'unité"],
+    ],
+  },
+
+  // ---- Parfums (diffuseurs) ----
+  {
+    slug: "diffuseur-figuier",
+    name: "Diffuseur Figuier",
+    eyebrow: "DIFFUSEUR À BÂTONS · 100ML",
+    price: "25.00€",
+    img: "/assets/cat-542.png",
+    category: "Parfums",
+    description:
+      "Figue verte et sève de figuier, la Méditerranée en diffusion. Douce et continue pendant près de 3 mois. Livré avec 8 bâtons en rotin.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [{ label: "100 ml — 25.00€", price: "25.00€" }],
+    details: [
+      ["Contenance", "100 ml · diffusion ~3 mois"],
+      ["Matière", "8 bâtons en rotin inclus"],
+      ["Parfum", "Figue & sève de figuier"],
+      ["Origine", "Assemblé en France"],
+      ["Colisage", "Vendu à l'unité"],
+    ],
+  },
+  {
+    slug: "diffuseur-ambre",
+    name: "Diffuseur Ambre",
+    eyebrow: "DIFFUSEUR À BÂTONS · 100ML",
+    price: "25.00€",
+    img: "/assets/cat-544.png",
+    category: "Parfums",
+    description:
+      "Ambre chaud et bois précieux, une signature enveloppante. Diffusion douce et continue pendant près de 3 mois. Livré avec 8 bâtons en rotin.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [{ label: "100 ml — 25.00€", price: "25.00€" }],
+    details: [
+      ["Contenance", "100 ml · diffusion ~3 mois"],
+      ["Matière", "8 bâtons en rotin inclus"],
+      ["Parfum", "Ambre & bois"],
+      ["Origine", "Assemblé en France"],
+      ["Colisage", "Vendu à l'unité"],
+    ],
+  },
+  {
+    slug: "diffuseur-tubereuse",
+    name: "Diffuseur Tubéreuse",
+    eyebrow: "DIFFUSEUR À BÂTONS · 100ML",
+    price: "25.00€",
+    img: "/assets/collec-574.png",
+    category: "Parfums",
+    description:
+      "Tubéreuse opulente et fleurs blanches, un bouquet solaire. Diffusion douce et continue pendant près de 3 mois. Livré avec 8 bâtons en rotin.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [{ label: "100 ml — 25.00€", price: "25.00€" }],
+    details: [
+      ["Contenance", "100 ml · diffusion ~3 mois"],
+      ["Matière", "8 bâtons en rotin inclus"],
+      ["Parfum", "Tubéreuse & fleurs blanches"],
+      ["Origine", "Assemblé en France"],
+      ["Colisage", "Vendu à l'unité"],
+    ],
+  },
+  {
+    slug: "diffuseur-cerise",
+    name: "Diffuseur Cerise",
+    eyebrow: "DIFFUSEUR À BÂTONS · 100ML",
+    price: "25.00€",
+    img: "/assets/bs-3.png",
+    category: "Parfums",
+    description:
+      "Cerise croquante et amande douce, une gourmandise acidulée. Diffusion douce et continue pendant près de 3 mois. Livré avec 8 bâtons en rotin.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [{ label: "100 ml — 25.00€", price: "25.00€" }],
+    details: [
+      ["Contenance", "100 ml · diffusion ~3 mois"],
+      ["Matière", "8 bâtons en rotin inclus"],
+      ["Parfum", "Cerise & amande"],
+      ["Origine", "Assemblé en France"],
+      ["Colisage", "Vendu à l'unité"],
+    ],
+  },
+
+  // ---- Céramiques (assiettes) ----
+  {
+    slug: "assiette-pink-palm",
+    name: "Assiette Pink & Palm",
+    eyebrow: "CÉRAMIQUE PEINTE À LA MAIN · ANDALOUSIE",
+    price: "12.50€",
+    img: "/assets/cat-545.png",
+    category: "Céramiques",
+    subcategory: "Assiettes",
+    description:
+      "Assiette à dessert tournée et peinte à la main en Andalousie. Motif palmier et touches rosées — chaque pièce est unique.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [
+      { label: "13 cm — 6.50€", price: "6.50€" },
+      { label: "20 cm — 12.50€", price: "12.50€" },
+    ],
+    details: [
+      ["Dimensions", "Ø 20 cm (existe aussi en 13 cm)"],
+      ["Matière", "Céramique émaillée, peinte à la main"],
+      ["Entretien", "Lavage à la main recommandé"],
+      ["Origine", "Fabriquée artisanalement en Andalousie"],
+      ["Colisage", "Vendue à l'unité"],
+    ],
+  },
+  {
+    slug: "assiette-time-to-brunch",
+    name: "Assiettes Time to Brunch",
+    eyebrow: "CÉRAMIQUE PEINTE À LA MAIN · ANDALOUSIE",
+    price: "12.50€",
+    img: "/assets/cat-541.png",
+    category: "Céramiques",
+    subcategory: "Assiettes",
+    description:
+      "Assiette à dessert tournée et peinte à la main en Andalousie. Un clin d'œil aux brunchs ensoleillés — chaque pièce est unique.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [
+      { label: "13 cm — 6.50€", price: "6.50€" },
+      { label: "20 cm — 12.50€", price: "12.50€" },
+    ],
+    details: [
+      ["Dimensions", "Ø 20 cm (existe aussi en 13 cm)"],
+      ["Matière", "Céramique émaillée, peinte à la main"],
+      ["Entretien", "Lavage à la main recommandé"],
+      ["Origine", "Fabriquée artisanalement en Andalousie"],
+      ["Colisage", "Vendue à l'unité"],
+    ],
+  },
+  {
+    slug: "assiette-press-for-champagne",
+    name: "Assiettes Press for Champagne",
+    eyebrow: "CÉRAMIQUE PEINTE À LA MAIN · ANDALOUSIE",
+    price: "12.50€",
+    img: "/assets/cat-548.png",
+    category: "Céramiques",
+    subcategory: "Assiettes",
+    description:
+      "Assiette à dessert tournée et peinte à la main en Andalousie. « Press for Champagne » — l'esprit festif de KULT. Chaque pièce est unique.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [
+      { label: "13 cm — 6.50€", price: "6.50€" },
+      { label: "20 cm — 12.50€", price: "12.50€" },
+    ],
+    details: [
+      ["Dimensions", "Ø 20 cm (existe aussi en 13 cm)"],
+      ["Matière", "Céramique émaillée, peinte à la main"],
+      ["Entretien", "Lavage à la main recommandé"],
+      ["Origine", "Fabriquée artisanalement en Andalousie"],
+      ["Colisage", "Vendue à l'unité"],
+    ],
+  },
+
+  // ---- Parfums (sprays) ----
+  {
+    slug: "parfum-vanille-patchouli",
+    name: "Parfum Vanille & Patchouli",
+    eyebrow: "PARFUM D'INTÉRIEUR · 100ML",
+    price: "25.00€",
+    img: "/assets/cat-547.png",
+    category: "Parfums",
+    description:
+      "Vanille gourmande et patchouli terreux, un sillage chaud à vaporiser dans la maison ou sur le linge.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [{ label: "100 ml — 25.00€", price: "25.00€" }],
+    details: [
+      ["Contenance", "100 ml · spray"],
+      ["Matière", "Base sans alcool"],
+      ["Parfum", "Vanille & patchouli"],
+      ["Origine", "Composé à Grasse"],
+      ["Colisage", "Vendu à l'unité"],
+    ],
+  },
+  {
+    slug: "parfum-mimosa",
+    name: "Parfum Mimosa",
+    eyebrow: "PARFUM D'INTÉRIEUR · 100ML",
+    price: "25.00€",
+    img: "/assets/collec-573.png",
+    category: "Parfums",
+    description:
+      "Mimosa poudré et miellé, une bouffée de printemps méditerranéen à vaporiser partout dans la maison.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [{ label: "100 ml — 25.00€", price: "25.00€" }],
+    details: [
+      ["Contenance", "100 ml · spray"],
+      ["Matière", "Base sans alcool"],
+      ["Parfum", "Mimosa poudré"],
+      ["Origine", "Composé à Grasse"],
+      ["Colisage", "Vendu à l'unité"],
+    ],
+  },
+
+  // ---- Céramiques (bougies céramique) ----
+  {
+    slug: "bougie-ceramique-figuier",
+    name: "Bougie Céramique Figuier",
+    eyebrow: "BOUGIE EN CÉRAMIQUE · 220G",
+    price: "39.00€",
+    img: "/assets/collec-572.png",
+    category: "Céramiques",
+    description:
+      "Bougie coulée dans un contenant en céramique rayée, tourné et peint à la main en Andalousie. Parfum figuier, mèche coton, 60h de combustion. Le contenant se réutilise en vase ou pot.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [{ label: "220 g — 39.00€", price: "39.00€" }],
+    details: [
+      ["Contenance", "220 g · env. 60h de combustion"],
+      ["Matière", "Céramique émaillée + cire végétale"],
+      ["Parfum", "Figuier"],
+      ["Origine", "Céramique faite main en Andalousie"],
+      ["Colisage", "Vendue à l'unité"],
+    ],
+  },
+  {
+    slug: "bougie-ceramique-pamplemousse",
+    name: "Bougie Céramique Pamplemousse, Rose & Vanille",
+    eyebrow: "BOUGIE EN CÉRAMIQUE · 220G",
+    price: "39.00€",
+    img: "/assets/bs-5.png",
+    category: "Céramiques",
+    description:
+      "Bougie coulée dans un contenant en céramique rayée, tourné et peint à la main en Andalousie. Pamplemousse rose & vanille, mèche coton, 60h de combustion. Le contenant se réutilise en vase ou pot.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [{ label: "220 g — 39.00€", price: "39.00€" }],
+    details: [
+      ["Contenance", "220 g · env. 60h de combustion"],
+      ["Matière", "Céramique émaillée + cire végétale"],
+      ["Parfum", "Pamplemousse rose & vanille"],
+      ["Origine", "Céramique faite main en Andalousie"],
+      ["Colisage", "Vendue à l'unité"],
+    ],
+  },
 ];
 
 export function getProduct(slug: string): Product | undefined {
