@@ -8,6 +8,7 @@ import {
 import { ServiceIcon } from "./ServiceIcon";
 import ProTeaser from "./ProTeaser";
 import BestSellersCarousel from "./BestSellersCarousel";
+import BurgerMenu from "./BurgerMenu";
 
 /** Fluid, stacked layout used below the `lg` breakpoint. */
 export default function MobileHome() {
@@ -22,11 +23,9 @@ export default function MobileHome() {
           alt=""
           className="pointer-events-none absolute -left-40 top-0 h-full w-auto opacity-80"
         />
-        <button aria-label="Menu" className="relative z-10 flex flex-col gap-[5px]">
-          <span className="block h-[6px] w-[38px] bg-black" />
-          <span className="block h-[6px] w-[38px] bg-black" />
-          <span className="block h-[6px] w-[38px] bg-black" />
-        </button>
+        <div className="relative z-10">
+          <BurgerMenu barWidth={38} barHeight={6} gap={5} />
+        </div>
         <div className="relative z-10 h-[52px] w-[110px] sm:h-[64px] sm:w-[130px]">
           <Image src="/assets/logo-blanc.png" alt="KULT Collection" fill className="object-contain" />
         </div>
@@ -98,7 +97,7 @@ export default function MobileHome() {
       </section>
 
       {/* ===== A propos ===== */}
-      <section className="relative flex aspect-[1738/340] w-full items-center justify-center overflow-hidden">
+      <section id="about" className="relative flex aspect-[1738/340] w-full items-center justify-center overflow-hidden scroll-mt-24">
         <Image src="/assets/about.png" alt="À propos de nous" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-kult-pink-soft/40" />
         <span className="font-display relative z-10 rounded-full bg-black px-6 py-3 text-[22px] font-bold text-white sm:px-8 sm:py-4 sm:text-[32px]">
@@ -151,7 +150,7 @@ export default function MobileHome() {
       </section>
 
       {/* ===== Footer ===== */}
-      <footer className="w-full bg-black text-white">
+      <footer id="contact" className="w-full scroll-mt-24 bg-black text-white">
         <div className="grid grid-cols-1 gap-10 px-6 py-12 sm:grid-cols-3">
           <div>
             <h3 className="text-[18px] font-medium italic">ADDRESSE</h3>

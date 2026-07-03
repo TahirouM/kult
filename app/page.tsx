@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FigmaCanvas, FBox } from "./components/FigmaCanvas";
 import MobileHome from "./components/MobileHome";
 import BestSellersCarousel from "./components/BestSellersCarousel";
+import BurgerMenu from "./components/BurgerMenu";
 import { catalogue, collectionItems } from "./lib/content";
 
 const CANVAS_H = 6633;
@@ -16,7 +17,10 @@ export default function Home() {
       </div>
 
       {/* Desktop: pixel-faithful Figma canvas (>= lg) */}
-      <div className="hidden lg:block">
+      <div className="relative hidden lg:block">
+        {/* scroll anchors aligned to the canvas sections (as % of total height) */}
+        <span id="about" className="pointer-events-none absolute" style={{ top: `${(2608 / CANVAS_H) * 100}%` }} />
+        <span id="contact" className="pointer-events-none absolute" style={{ top: `${(5967 / CANVAS_H) * 100}%` }} />
         <FigmaCanvas height={CANVAS_H}>
           {/* ============ HERO (Slide 16:9) — pink band 0..1023 ============ */}
           <FBox x={0} y={0} w={1728} h={1023} className="overflow-hidden bg-kult-pink">
@@ -41,10 +45,10 @@ export default function Home() {
             <Image src="/assets/hero.png" alt="Bougie KULT au bord de la piscine" fill priority className="object-cover" />
           </FBox>
 
-          {/* Burger — 3 bars 68px at x137 y34/48/63 */}
-          <FBox x={137} y={34} w={68} h={10} className="bg-black" />
-          <FBox x={137} y={48} w={68} h={11} className="bg-black" />
-          <FBox x={137} y={63} w={68} h={10} className="bg-black" />
+          {/* Burger menu — 3 bars 68px at x137 y34 */}
+          <FBox x={137} y={34} w={68} h={39}>
+            <BurgerMenu barWidth={68} barHeight={10} gap={4} />
+          </FBox>
 
           {/* Logo blanc 104x66 at 812,28 */}
           <FBox x={812} y={28} w={104} h={66}>
