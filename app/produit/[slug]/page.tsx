@@ -39,6 +39,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <Image src="/produit/logo-vert.png" alt="KULT Collection" fill className="object-contain" priority />
         </Link>
         <div className="relative z-10 flex items-center gap-3">
+          <Link href="/panier" aria-label="Voir le panier">
+            <Image src="/assets/shopping-bag.svg" alt="Panier" width={40} height={40} className="h-8 w-8 sm:h-9 sm:w-9" />
+          </Link>
           <span className="font-label text-[26px] text-black sm:text-[32px]">FR</span>
         </div>
       </header>

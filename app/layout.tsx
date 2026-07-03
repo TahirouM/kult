@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Kaisei_Decol, Londrina_Solid } from "next/font/google";
 import "./globals.css";
+import Loader from "./components/Loader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,6 +40,7 @@ export default function RootLayout({
       className={`${inter.variable} ${kaisei.variable} ${londrina.variable} antialiased`}
     >
       <body className="min-h-screen overflow-x-hidden bg-white text-black">
+        <Loader />
         {children}
       </body>
     </html>
