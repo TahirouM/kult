@@ -390,6 +390,89 @@ export const products: Product[] = [
       ["Colisage", "Vendue à l'unité"],
     ],
   },
+
+  // ---- Florale ----
+  {
+    slug: "bougie-mimosa",
+    name: "Bougie Mimosa",
+    eyebrow: "BOUGIE PARFUMÉE · 180G",
+    price: "23.00€",
+    img: "/assets/collec-573.png",
+    category: "Florale",
+    description:
+      "Mimosa poudré et miellé, un bouquet de printemps méditerranéen. Coulée à la main dans un verre rayé signature. Mèche coton, cire végétale, 45h de combustion.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [
+      { label: "Bougie · 180g — 23.00€", price: "23.00€" },
+      { label: "Grand format · 320g — 34.00€", price: "34.00€" },
+    ],
+    details: [
+      ["Contenance", "180 g · env. 45h de combustion"],
+      ["Matière", "Cire végétale, mèche coton"],
+      ["Parfum", "Mimosa poudré"],
+      ["Origine", "Coulée à la main en France"],
+      ["Colisage", "Vendue à l'unité"],
+    ],
+  },
+  {
+    slug: "diffuseur-fleur-doranger",
+    name: "Diffuseur Fleur d'Oranger",
+    eyebrow: "DIFFUSEUR À BÂTONS · 100ML",
+    price: "25.00€",
+    img: "/assets/cat-544.png",
+    category: "Florale",
+    description:
+      "Fleur d'oranger solaire et néroli délicat, une évasion florale. Diffusion douce et continue pendant près de 3 mois. Livré avec 8 bâtons en rotin.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [{ label: "100 ml — 25.00€", price: "25.00€" }],
+    details: [
+      ["Contenance", "100 ml · diffusion ~3 mois"],
+      ["Matière", "8 bâtons en rotin inclus"],
+      ["Parfum", "Fleur d'oranger & néroli"],
+      ["Origine", "Assemblé en France"],
+      ["Colisage", "Vendu à l'unité"],
+    ],
+  },
+
+  // ---- Autres ----
+  {
+    slug: "coffret-decouverte",
+    name: "Coffret Découverte",
+    eyebrow: "COFFRET CADEAU",
+    price: "45.00€",
+    img: "/assets/cat-548.png",
+    category: "Autres",
+    description:
+      "Un été sur palm beach en une boîte : trois mini-bougies, une assiette La Dolce Vita et notre carte parfumée. Emballage cadeau offert.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [{ label: "Coffret — 45.00€", price: "45.00€" }],
+    details: [
+      ["Contenu", "3 mini-bougies + 1 assiette"],
+      ["Emballage", "Coffret cadeau signature"],
+      ["Idéal", "Cadeau, pendaison de crémaillère"],
+      ["Édition", "Limitée · été 2026"],
+      ["Colisage", "Vendu à l'unité"],
+    ],
+  },
+  {
+    slug: "carte-parfumee",
+    name: "Carte Parfumée",
+    eyebrow: "ACCESSOIRE · SENTEUR",
+    price: "6.00€",
+    img: "/assets/cat-547.png",
+    category: "Autres",
+    description:
+      "Carte à parfumer à glisser dans un tiroir, une penderie ou la voiture. Senteur signature KULT, tenue plusieurs semaines.",
+    microcopy: "Frais de port offerts dès 35€  ·  Livraison en 3–5 jours",
+    formats: [{ label: "À l'unité — 6.00€", price: "6.00€" }],
+    details: [
+      ["Format", "Carte parfumée à suspendre"],
+      ["Senteur", "Signature KULT"],
+      ["Tenue", "Plusieurs semaines"],
+      ["Origine", "Parfum composé à Grasse"],
+      ["Colisage", "Vendue à l'unité"],
+    ],
+  },
 ];
 
 export function getProduct(slug: string): Product | undefined {
@@ -411,8 +494,16 @@ export const CATEGORIES = [
 ] as const;
 
 export function productsByCategory(catSlug?: string): Product[] {
-  if (!catSlug || catSlug === "tous") return products;
-  const cat = CATEGORIES.find((c) => c.slug === catSlug);
-  if (!cat) return products;
-  return products.filter((p) => p.category.toLowerCase() === cat.label.toLowerCase());
+  // A specific category → just its products.
+  if (catSlug && catSlug !== "tous") {
+    const cat = CATEGORIES.find((c) => c.slug === catSlug);
+    if (cat) {
+      return products.filter((p) => p.category.toLowerCase() === cat.label.toLowerCase());
+    }
+  }
+  // "Tous" → all products grouped by category (same-category items side by side),
+  // in the CATEGORIES order, preserving original order within each category.
+  return CATEGORIES.flatMap((cat) =>
+    products.filter((p) => p.category.toLowerCase() === cat.label.toLowerCase())
+  );
 }
