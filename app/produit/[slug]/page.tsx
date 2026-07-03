@@ -44,9 +44,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </span>
         </Link>
         <div className="relative z-10 flex items-center gap-3">
-          <Link href="/pro" className="hidden text-[13px] font-semibold text-black sm:inline">
-            KULT Pro
-          </Link>
           <span className="font-label text-[26px] text-black sm:text-[32px]">FR</span>
         </div>
       </header>

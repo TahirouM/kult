@@ -67,7 +67,6 @@ export default function AProposPage() {
           <span className="block text-[9px] font-light tracking-[0.4em] text-[#ff5883] sm:text-[11px]">COLLECTION</span>
         </Link>
         <div className="relative z-10 flex items-center gap-3">
-          <Link href="/pro" className="hidden text-[13px] font-semibold text-[#ff5883] sm:inline">KULT Pro</Link>
           <span className="font-label text-[26px] text-[#ff5883] sm:text-[32px]">FR</span>
         </div>
       </header>

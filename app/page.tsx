@@ -63,17 +63,6 @@ export default function Home() {
             </Link>
           </FBox>
 
-          {/* KULT Pro link (added — not in Figma header, gives desktop access to /pro) */}
-          <FBox x={1220} y={40} w={230} h={30}>
-            <Link
-              href="/pro"
-              className="inline-flex items-center gap-2 text-[22px] font-semibold leading-none text-black transition-opacity hover:opacity-70"
-            >
-              <span className="h-2 w-2 rounded-full bg-kult-violet" />
-              KULT Pro
-            </Link>
-          </FBox>
-
           {/* FR at 1571,33 — Londrina Solid Black 36px */}
           <FBox x={1571} y={33} w={46} h={41}>
             <span className="font-label text-[36px] leading-none text-black">FR</span>
