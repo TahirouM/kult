@@ -40,9 +40,10 @@ export default function Home() {
             />
           </FBox>
 
-          {/* Pool photo (Rectangle 510) 0,108 1728x887 */}
+          {/* Hero animated GIF (Rectangle 510) 0,108 1728x887 */}
           <FBox x={0} y={108} w={1728} h={887} className="overflow-hidden">
-            <Image src="/assets/hero.png" alt="Bougie KULT au bord de la piscine" fill priority className="object-cover" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/hero.gif" alt="Bougie KULT au bord de la piscine" className="h-full w-full object-cover" />
           </FBox>
 
           {/* Burger menu — 3 bars 68px at x137 y34 */}

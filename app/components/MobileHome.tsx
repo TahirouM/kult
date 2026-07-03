@@ -41,9 +41,10 @@ export default function MobileHome() {
         </div>
       </header>
 
-      {/* ===== Hero photo ===== */}
-      <div className="relative aspect-[1728/885] w-full">
-        <Image src="/assets/hero.png" alt="Bougie KULT au bord de la piscine" fill priority className="object-cover" />
+      {/* ===== Hero animated GIF ===== */}
+      <div className="relative aspect-[1728/885] w-full overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/assets/hero.gif" alt="Bougie KULT au bord de la piscine" className="absolute inset-0 h-full w-full object-cover" />
       </div>
 
       {/* ===== Pro teaser ===== */}
