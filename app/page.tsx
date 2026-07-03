@@ -89,7 +89,7 @@ export default function Home() {
 
           {/* infinite horizontal carousel — full-width band at y=1218 (h≈489) */}
           <FBox x={0} y={1218} w={1728} h={489}>
-            <BestSellersCarousel cardSize={303} gap={46} duration={36} />
+            <BestSellersCarousel cardSize={303} gap={46} speed={45} />
           </FBox>
 
           {/* ============ COLLECTION DU MOIS ============ */}

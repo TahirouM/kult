@@ -30,20 +30,13 @@
   font-family: var(--font-londrina), Impact, sans-serif;
 }
 
-/* Infinite horizontal marquee for the best-sellers carousel */
-@keyframes scroll-x {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+/* Hide scrollbar on the swipeable best-sellers carousel (still scrollable) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.animate-scroll-x {
-  animation: scroll-x var(--scroll-duration, 40s) linear infinite;
-}
-.animate-scroll-x:hover {
-  animation-play-state: paused;
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 html {

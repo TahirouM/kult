@@ -55,7 +55,7 @@ export default function MobileHome() {
         <h2 className="font-display mb-6 text-center text-[30px] font-bold sm:text-[40px]">
           BEST SELLERS
         </h2>
-        <BestSellersCarousel cardSize={200} gap={24} duration={30} />
+        <BestSellersCarousel cardSize={200} gap={24} speed={35} />
       </section>
 
       {/* ===== Collection du mois ===== */}
