@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { bestSellers } from "../lib/content";
 
 /**
@@ -25,10 +26,12 @@ export default function BestSellersCarousel({
         style={{ gap, ["--scroll-duration" as string]: `${duration}s` }}
       >
         {loop.map((p, i) => (
-          <article
+          <Link
             key={i}
+            href={`/produit/${p.slug}`}
             aria-hidden={i >= bestSellers.length}
-            className="flex shrink-0 flex-col"
+            tabIndex={i >= bestSellers.length ? -1 : undefined}
+            className="group flex shrink-0 flex-col"
             style={{ width: cardSize }}
           >
             <div className="relative overflow-hidden bg-white" style={{ width: cardSize, height: cardSize }}>
@@ -36,7 +39,7 @@ export default function BestSellersCarousel({
                 src={p.img}
                 alt={p.name}
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes={`${cardSize}px`}
               />
             </div>
@@ -46,7 +49,7 @@ export default function BestSellersCarousel({
             <p className="font-display mt-1 text-[16px] font-medium text-black md:text-[20px]">
               {p.price}
             </p>
-          </article>
+          </Link>
         ))}
       </div>
     </div>

@@ -3,11 +3,11 @@
 
 // Best sellers — scrolls infinitely on the homepage.
 export const bestSellers = [
-  { img: "/assets/bs-1.png", name: "BOUGIE VIOLETTE", price: "23.00€" },
-  { img: "/assets/bs-2.png", name: "BOUGIE LAIT D'AMANDE", price: "23.00€" },
-  { img: "/assets/bs-3.png", name: "DIFFUSEUR COCO", price: "25.00€" },
-  { img: "/assets/bs-4.png", name: "ASSIETTES LA DOLCE VITA", price: "12.50€" },
-  { img: "/assets/bs-5.png", name: "BOUGIE LAIT DE FIGUE", price: "25.00€" },
+  { img: "/assets/bs-1.png", name: "BOUGIE VIOLETTE", price: "23.00€", slug: "bougie-violette" },
+  { img: "/assets/bs-2.png", name: "BOUGIE LAIT D'AMANDE", price: "23.00€", slug: "bougie-lait-damande" },
+  { img: "/assets/bs-3.png", name: "DIFFUSEUR COCO", price: "25.00€", slug: "diffuseur-coco-tonka" },
+  { img: "/assets/bs-4.png", name: "ASSIETTES LA DOLCE VITA", price: "12.50€", slug: "assiette-la-dolce-vita" },
+  { img: "/assets/bs-5.png", name: "BOUGIE LAIT DE FIGUE", price: "25.00€", slug: "bougie-lait-de-figue" },
 ];
 
 // Catalogue tiles with exact Figma x/y/w/h (used by the desktop canvas).
