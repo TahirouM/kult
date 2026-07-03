@@ -34,7 +34,9 @@ export default function MobileHome() {
             <span className="h-1.5 w-1.5 rounded-full bg-kult-violet" />
             Pro
           </Link>
-          <Image src="/assets/shopping-bag.svg" alt="Panier" width={34} height={34} className="h-8 w-8" />
+          <Link href="/panier" aria-label="Voir le panier">
+            <Image src="/assets/shopping-bag.svg" alt="Panier" width={34} height={34} className="h-8 w-8" />
+          </Link>
           <span className="text-[22px] font-bold leading-none text-black sm:text-[26px]">FR</span>
         </div>
       </header>

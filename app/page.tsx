@@ -55,9 +55,11 @@ export default function Home() {
             <Image src="/assets/logo-blanc.png" alt="KULT Collection" fill className="object-contain" />
           </FBox>
 
-          {/* Cart 46x46 at 1520,28 */}
+          {/* Cart 46x46 at 1520,28 → /panier */}
           <FBox x={1520} y={28} w={46} h={46}>
-            <Image src="/assets/shopping-bag.svg" alt="Panier" fill />
+            <Link href="/panier" aria-label="Voir le panier" className="block h-full w-full">
+              <Image src="/assets/shopping-bag.svg" alt="Panier" fill />
+            </Link>
           </FBox>
 
           {/* KULT Pro link (added — not in Figma header, gives desktop access to /pro) */}
