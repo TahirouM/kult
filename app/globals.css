@@ -18,6 +18,32 @@
   --color-kult-pink-soft: var(--kult-pink-soft);
   --color-kult-violet: var(--kult-violet);
   --font-sans: var(--font-inter);
+  --font-display: var(--font-kaisei);
+  --font-label: var(--font-londrina);
+}
+
+/* KULT rebrand typefaces */
+.font-display {
+  font-family: var(--font-kaisei), Georgia, serif;
+}
+.font-label {
+  font-family: var(--font-londrina), Impact, sans-serif;
+}
+
+/* Infinite horizontal marquee for the best-sellers carousel */
+@keyframes scroll-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-scroll-x {
+  animation: scroll-x var(--scroll-duration, 40s) linear infinite;
+}
+.animate-scroll-x:hover {
+  animation-play-state: paused;
 }
 
 html {

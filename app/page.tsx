@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FigmaCanvas, FBox } from "./components/FigmaCanvas";
 import MobileHome from "./components/MobileHome";
-import { bestSellers, catalogue, collectionItems } from "./lib/content";
+import BestSellersCarousel from "./components/BestSellersCarousel";
+import { catalogue, collectionItems } from "./lib/content";
 
 const CANVAS_H = 6633;
 
@@ -66,34 +67,23 @@ export default function Home() {
             </Link>
           </FBox>
 
-          {/* FR at 1571,33 36px bold black */}
+          {/* FR at 1571,33 — Londrina Solid Black 36px */}
           <FBox x={1571} y={33} w={46} h={41}>
-            <span className="text-[36px] font-bold leading-none text-black">FR</span>
+            <span className="font-label text-[36px] leading-none text-black">FR</span>
           </FBox>
 
           {/* ============ BEST SELLERS ============ */}
-          <FBox x={744} y={1076}>
-            <h2 className="whitespace-nowrap text-[48px] font-light leading-none text-black">BEST SELLERS</h2>
+          {/* centered title */}
+          <FBox x={0} y={1076} w={1728}>
+            <h2 className="font-display text-center text-[40px] font-bold leading-none text-black">
+              BEST SELLERS
+            </h2>
           </FBox>
 
-          {/* soft pink block 1620x489 at 106,1218 */}
-          <FBox x={106} y={1218} w={1620} h={489} className="bg-kult-pink-soft" />
-
-          {bestSellers.map((p) => (
-            <FBox key={p.x} x={p.x} y={1268} w={303} h={303} className="overflow-hidden">
-              <Image src={p.img} alt={p.name} fill className="object-cover" />
-            </FBox>
-          ))}
-          {bestSellers.map((p) => (
-            <div key={`t-${p.x}`}>
-              <FBox x={p.x} y={1583} w={420}>
-                <h3 className="text-[20px] font-medium leading-none text-black">{p.name}</h3>
-              </FBox>
-              <FBox x={p.x} y={1622} w={160}>
-                <p className="text-[20px] font-medium italic leading-none text-black">{p.price}</p>
-              </FBox>
-            </div>
-          ))}
+          {/* infinite horizontal carousel — full-width band at y=1218 (h≈489) */}
+          <FBox x={0} y={1218} w={1728} h={489}>
+            <BestSellersCarousel cardSize={303} gap={46} duration={36} />
+          </FBox>
 
           {/* ============ COLLECTION DU MOIS ============ */}
           {/* motif behind: full width 1728x545 at 0,1894 */}
@@ -101,48 +91,51 @@ export default function Home() {
             <Image src="/assets/logo-motifs-1.png" alt="" fill className="object-cover" />
           </FBox>
 
-          <FBox x={341} y={1788}>
-            <h2 className="whitespace-nowrap text-[48px] font-light leading-none text-black">COLLECTION DU MOIS</h2>
+          {/* centered title + subtitle */}
+          <FBox x={0} y={1786} w={1728}>
+            <h2 className="font-display text-center text-[40px] font-bold leading-none text-black">
+              COLLECTION DU MOIS
+            </h2>
           </FBox>
-          <FBox x={341} y={1853}>
-            <p className="whitespace-nowrap text-[24px] font-normal leading-none text-black">
+          <FBox x={0} y={1851} w={1728}>
+            <p className="font-display text-center text-[24px] font-normal leading-none text-black">
               Pour un été sur palm beach réussi
             </p>
           </FBox>
 
-          {/* big image 435x432 at 341,1947 */}
-          <FBox x={341} y={1947} w={435} h={432} className="overflow-hidden">
+          {/* big image 435x432 at 455.5,1947 */}
+          <FBox x={455.5} y={1947} w={435} h={432} className="overflow-hidden">
             <Image src={collectionItems.main.img} alt={collectionItems.main.name} fill className="object-cover" />
           </FBox>
           {/* label on big image bottom-left */}
-          <FBox x={366} y={2315} w={231}>
-            <p className="text-[16px] font-bold leading-none text-black">{collectionItems.main.name}</p>
+          <FBox x={480.5} y={2315} w={240}>
+            <p className="font-label text-[16px] leading-none text-black">{collectionItems.main.name}</p>
           </FBox>
-          <FBox x={366} y={2339} w={73}>
-            <p className="text-[20px] font-medium italic leading-none text-black">{collectionItems.main.price}</p>
+          <FBox x={480.5} y={2339} w={73}>
+            <p className="font-display text-[20px] font-medium leading-none text-black">{collectionItems.main.price}</p>
           </FBox>
 
-          {/* top small image 183x211 at 788,1947 */}
-          <FBox x={788} y={1947} w={183} h={211} className="overflow-hidden">
+          {/* top small image 183x211 at 902.5,1947 */}
+          <FBox x={902.5} y={1947} w={183} h={211} className="overflow-hidden">
             <Image src={collectionItems.top.img} alt={collectionItems.top.name} fill className="object-cover" />
           </FBox>
-          {/* Bougie Mimosa black label 165x72 at 971,2086 */}
-          <FBox x={971} y={2086} w={165} h={72} className="bg-black">
+          {/* Bougie Mimosa black label 187x89 at 1085.5,2069 */}
+          <FBox x={1085.5} y={2069} w={187} h={89} className="bg-black">
             <div className="flex h-full flex-col justify-center px-3">
-              <p className="text-[16px] font-bold leading-none text-white">{collectionItems.top.name}</p>
-              <p className="mt-1 text-[20px] font-medium italic leading-none text-white">{collectionItems.top.price}</p>
+              <p className="font-label text-[16px] leading-none text-white">{collectionItems.top.name}</p>
+              <p className="font-display mt-1 text-[20px] font-medium leading-none text-white">{collectionItems.top.price}</p>
             </div>
           </FBox>
 
-          {/* bottom small image 183x211 at 788,2175 */}
-          <FBox x={788} y={2175} w={183} h={211} className="overflow-hidden">
+          {/* bottom small image 183x211 at 902.5,2175 */}
+          <FBox x={902.5} y={2175} w={183} h={211} className="overflow-hidden">
             <Image src={collectionItems.bottom.img} alt={collectionItems.bottom.name} fill className="object-cover" />
           </FBox>
-          {/* Diffuseur Mimosa black label 187x86 at 971,2300 */}
-          <FBox x={971} y={2300} w={187} h={86} className="bg-black">
+          {/* Diffuseur Mimosa black label 187x86 at 1085.5,2300 */}
+          <FBox x={1085.5} y={2300} w={187} h={86} className="bg-black">
             <div className="flex h-full flex-col justify-center px-3">
-              <p className="text-[16px] font-bold leading-none text-white">{collectionItems.bottom.name}</p>
-              <p className="mt-1 text-[20px] font-medium italic leading-none text-white">{collectionItems.bottom.price}</p>
+              <p className="font-label text-[16px] leading-none text-white">{collectionItems.bottom.name}</p>
+              <p className="font-display mt-1 text-[20px] font-medium leading-none text-white">{collectionItems.bottom.price}</p>
             </div>
           </FBox>
 
@@ -156,13 +149,13 @@ export default function Home() {
           {/* black pill 485x88 at 621,2734 */}
           <FBox x={621} y={2734} w={485} h={88} className="rounded-[71px] bg-black">
             <div className="flex h-full items-center justify-center">
-              <span className="text-[48px] font-semibold leading-none text-white">A propos de nous</span>
+              <span className="font-display text-[40px] font-bold leading-none text-white">A propos de nous</span>
             </div>
           </FBox>
 
           {/* ============ NOTRE CATALOGUE ============ */}
           <FBox x={106} y={3142}>
-            <h2 className="whitespace-nowrap text-[48px] font-light leading-none text-black">NOTRE CATALOGUE</h2>
+            <h2 className="font-display whitespace-nowrap text-[40px] font-bold leading-none text-black">NOTRE CATALOGUE</h2>
           </FBox>
 
           {/* rose motif behind catalogue: 1515x574 at 106,4797 */}
@@ -176,10 +169,10 @@ export default function Home() {
             </FBox>
           ))}
 
-          {/* VOIR PLUS button — 254x66 rounded at 737,5213 */}
-          <FBox x={737} y={5213} w={254} h={66} className="rounded-[52px] bg-black">
+          {/* VOIR PLUS button — 254x66 at 737,5213 */}
+          <FBox x={737} y={5213} w={254} h={66} className="bg-black">
             <div className="flex h-full items-center justify-center">
-              <span className="text-[32px] font-light leading-none text-white">VOIR PLUS</span>
+              <span className="font-display text-[22px] font-bold leading-none text-white">VOIR PLUS</span>
             </div>
           </FBox>
 

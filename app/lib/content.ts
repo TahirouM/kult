@@ -1,13 +1,13 @@
 // Shared content for both the desktop canvas and the mobile layout.
 // Coordinates match the updated Figma frame (1728 × 6633).
 
-// Best sellers — 5 tiles of 303×303 at y=1268, x = 127/476/825/1176/1524.
+// Best sellers — scrolls infinitely on the homepage.
 export const bestSellers = [
-  { img: "/assets/bs-1.png", x: 127, name: "BOUGIE VIOLETTE", price: "23.00€" },
-  { img: "/assets/bs-2.png", x: 476, name: "BOUGIE LAIT D'AMANDE", price: "23.00€" },
-  { img: "/assets/bs-3.png", x: 825, name: "DIFFUSEUR COCO & TONKA", price: "25.00€" },
-  { img: "/assets/bs-4.png", x: 1176, name: "DIFFUSEUR COCO & TONKA", price: "25.00€" },
-  { img: "/assets/bs-5.png", x: 1524, name: "BOUGIE LAIT DE FIGUE", price: "25.00€" },
+  { img: "/assets/bs-1.png", name: "BOUGIE VIOLETTE", price: "23.00€" },
+  { img: "/assets/bs-2.png", name: "BOUGIE LAIT D'AMANDE", price: "23.00€" },
+  { img: "/assets/bs-3.png", name: "DIFFUSEUR COCO", price: "25.00€" },
+  { img: "/assets/bs-4.png", name: "ASSIETTES LA DOLCE VITA", price: "12.50€" },
+  { img: "/assets/bs-5.png", name: "BOUGIE LAIT DE FIGUE", price: "25.00€" },
 ];
 
 // Catalogue tiles with exact Figma x/y/w/h (used by the desktop canvas).

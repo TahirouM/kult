@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  bestSellers,
   catalogueColumns,
   collectionItems,
   services,
 } from "../lib/content";
 import { ServiceIcon } from "./ServiceIcon";
 import ProTeaser from "./ProTeaser";
+import BestSellersCarousel from "./BestSellersCarousel";
 
 /** Fluid, stacked layout used below the `lg` breakpoint. */
 export default function MobileHome() {
@@ -48,34 +48,12 @@ export default function MobileHome() {
       {/* ===== Pro teaser ===== */}
       <ProTeaser />
 
-      {/* ===== Best Sellers ===== */}
-      <section className="px-4 py-12 sm:px-6">
-        <h2 className="mb-6 text-center text-[32px] font-light tracking-tight sm:text-[44px]">
+      {/* ===== Best Sellers (infinite carousel) ===== */}
+      <section className="py-12">
+        <h2 className="font-display mb-6 text-center text-[30px] font-bold sm:text-[40px]">
           BEST SELLERS
         </h2>
-        <div className="rounded-sm bg-kult-pink-soft px-4 py-8 sm:px-6">
-          <div className="grid grid-cols-2 gap-5 sm:gap-6">
-            {bestSellers.map((p) => (
-              <article key={p.x} className="flex flex-col">
-                <div className="relative aspect-square w-full overflow-hidden bg-white">
-                  <Image
-                    src={p.img}
-                    alt={p.name || "Produit KULT"}
-                    fill
-                    className="object-cover"
-                    sizes="50vw"
-                  />
-                </div>
-                {p.name && (
-                  <div className="mt-3">
-                    <h3 className="text-[13px] font-medium sm:text-[15px]">{p.name}</h3>
-                    <p className="mt-1 text-[13px] font-medium italic sm:text-[15px]">{p.price}</p>
-                  </div>
-                )}
-              </article>
-            ))}
-          </div>
-        </div>
+        <BestSellersCarousel cardSize={200} gap={24} duration={30} />
       </section>
 
       {/* ===== Collection du mois ===== */}
@@ -86,10 +64,10 @@ export default function MobileHome() {
           </div>
         </div>
         <div className="relative z-10">
-          <h2 className="text-[28px] font-light leading-tight tracking-tight sm:text-[40px]">
+          <h2 className="font-display text-center text-[26px] font-bold leading-tight sm:text-[38px]">
             COLLECTION DU MOIS
           </h2>
-          <p className="mt-2 text-[15px] sm:text-[18px]">Pour un été sur palm beach réussi</p>
+          <p className="font-display mt-2 text-center text-[15px] sm:text-[18px]">Pour un été sur palm beach réussi</p>
           <div className="mt-6 grid grid-cols-2 gap-4">
             {/* main image with label */}
             <div className="relative col-span-2 aspect-[435/432] overflow-hidden">
@@ -123,14 +101,14 @@ export default function MobileHome() {
       <section className="relative flex aspect-[1738/340] w-full items-center justify-center overflow-hidden">
         <Image src="/assets/about.png" alt="À propos de nous" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-kult-pink-soft/40" />
-        <span className="relative z-10 rounded-full bg-black px-6 py-3 text-[22px] font-semibold text-white sm:px-8 sm:py-4 sm:text-[32px]">
+        <span className="font-display relative z-10 rounded-full bg-black px-6 py-3 text-[22px] font-bold text-white sm:px-8 sm:py-4 sm:text-[32px]">
           A propos de nous
         </span>
       </section>
 
       {/* ===== Notre catalogue ===== */}
       <section className="relative px-4 py-12 sm:px-6">
-        <h2 className="text-[28px] font-light leading-tight tracking-tight sm:text-[40px]">
+        <h2 className="font-display text-[26px] font-bold leading-tight sm:text-[38px]">
           NOTRE CATALOGUE
         </h2>
 
@@ -151,7 +129,7 @@ export default function MobileHome() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <button className="rounded-full bg-black px-10 py-3 text-[22px] font-light text-white transition-opacity hover:opacity-80 sm:text-[28px]">
+          <button className="font-display bg-black px-10 py-3 text-[20px] font-bold text-white transition-opacity hover:opacity-80 sm:text-[24px]">
             VOIR PLUS
           </button>
         </div>
