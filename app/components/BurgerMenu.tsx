@@ -133,6 +133,15 @@ export default function BurgerMenu({
               }`}
             >
               <ul className="overflow-hidden">
+                <li>
+                  <Link
+                    href="/catalogue"
+                    onClick={close}
+                    className="block py-2.5 pl-4 text-[18px] font-semibold text-black transition-colors hover:text-[color:var(--kult-violet)]"
+                  >
+                    Tous les produits
+                  </Link>
+                </li>
                 {categories.map((c) => (
                   <li key={c.label}>
                     <Link

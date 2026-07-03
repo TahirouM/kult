@@ -128,9 +128,9 @@ export default function MobileHome() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <button className="font-display bg-black px-10 py-3 text-[20px] font-bold text-white transition-opacity hover:opacity-80 sm:text-[24px]">
+          <Link href="/catalogue" className="font-display bg-black px-10 py-3 text-[20px] font-bold text-white transition-opacity hover:opacity-80 sm:text-[24px]">
             VOIR PLUS
-          </button>
+          </Link>
         </div>
       </section>
 

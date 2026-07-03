@@ -20,9 +20,14 @@ export default function CatalogueGrid() {
   return (
     <div className="mx-auto w-full max-w-[1608px] px-5 py-12 sm:px-10">
       <p className="font-label text-[16px] tracking-[1.5px] text-[#ff5883] sm:text-[18px]">NOTRE CATALOGUE</p>
-      <h1 className="font-display mt-3 text-[36px] font-bold leading-none text-black sm:text-[48px]">
-        Toute la collection
-      </h1>
+      <div className="mt-3 flex flex-wrap items-end justify-between gap-2">
+        <h1 className="font-display text-[36px] font-bold leading-none text-black sm:text-[48px]">
+          Toute la collection
+        </h1>
+        <span className="font-display text-[15px] text-[#595959] sm:text-[16px]">
+          {list.length} produit{list.length > 1 ? "s" : ""}
+        </span>
+      </div>
 
       {/* Category filters */}
       <div className="mt-8 flex flex-wrap gap-3">

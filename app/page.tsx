@@ -173,11 +173,11 @@ export default function Home() {
             </FBox>
           ))}
 
-          {/* VOIR PLUS button — 254x66 at 737,5213 */}
-          <FBox x={737} y={5213} w={254} h={66} className="bg-black">
-            <div className="flex h-full items-center justify-center">
+          {/* VOIR PLUS button — 254x66 at 737,5213 → /catalogue */}
+          <FBox x={737} y={5213} w={254} h={66}>
+            <Link href="/catalogue" className="flex h-full w-full items-center justify-center bg-black transition-opacity hover:opacity-90">
               <span className="font-display text-[22px] font-bold leading-none text-white">VOIR PLUS</span>
-            </div>
+            </Link>
           </FBox>
 
           {/* Service banner image — 1416x347 at 156,5519 */}

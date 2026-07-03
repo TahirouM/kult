@@ -214,7 +214,7 @@ export default function AProposPage() {
           La vie est belle. Découvrez la collection.
         </h2>
         <Link
-          href="/"
+          href="/catalogue"
           className="font-label relative z-10 bg-[#fff45c] px-10 py-5 text-[20px] tracking-[1px] text-[#ff5883] transition hover:brightness-105 sm:text-[24px]"
         >
           Voir le catalogue
