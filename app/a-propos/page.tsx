@@ -62,9 +62,8 @@ export default function AProposPage() {
         <div className="relative z-10">
           <BurgerMenu barWidth={48} barHeight={7} gap={5} />
         </div>
-        <Link href="/" className="relative z-10 text-center leading-none">
-          <span className="block text-[22px] font-bold tracking-[0.18em] text-[#ff5883] sm:text-[28px]">KULT</span>
-          <span className="block text-[9px] font-light tracking-[0.4em] text-[#ff5883] sm:text-[11px]">COLLECTION</span>
+        <Link href="/" className="relative z-10 block h-[54px] w-[104px] sm:h-[66px] sm:w-[128px]">
+          <Image src="/apropos/logo-rose.png" alt="KULT Collection" fill className="object-contain" priority />
         </Link>
         <div className="relative z-10 flex items-center gap-3">
           <span className="font-label text-[26px] text-[#ff5883] sm:text-[32px]">FR</span>

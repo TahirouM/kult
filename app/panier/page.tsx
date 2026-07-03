@@ -17,9 +17,8 @@ export default function CartPage() {
         <div className="relative z-10">
           <BurgerMenu barWidth={48} barHeight={7} gap={5} />
         </div>
-        <Link href="/" className="relative z-10 text-center leading-none text-white">
-          <span className="block text-[22px] font-bold tracking-[0.18em] sm:text-[28px]">KULT</span>
-          <span className="block text-[9px] font-light tracking-[0.4em] sm:text-[11px]">COLLECTION</span>
+        <Link href="/" className="relative z-10 block h-[52px] w-[100px] sm:h-[64px] sm:w-[122px]">
+          <Image src="/assets/logo-blanc.png" alt="KULT Collection" fill className="object-contain" priority />
         </Link>
         <div className="relative z-10 flex items-center gap-3">
           <Image src="/assets/shopping-bag.svg" alt="Panier" width={40} height={40} className="h-9 w-9" />
