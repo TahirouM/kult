@@ -68,29 +68,29 @@ export default function MobileHome() {
           <p className="font-display mt-2 text-center text-[15px] sm:text-[18px]">Pour un été sur palm beach réussi</p>
           <div className="mt-6 grid grid-cols-2 gap-4">
             {/* main image with label */}
-            <div className="relative col-span-2 aspect-[435/432] overflow-hidden">
+            <Link href={`/produit/${collectionItems.main.slug}`} className="relative col-span-2 aspect-[435/432] overflow-hidden">
               <Image src={collectionItems.main.img} alt={collectionItems.main.name} fill className="object-cover" sizes="100vw" />
               <div className="absolute bottom-3 left-3">
                 <p className="text-[13px] font-bold leading-none text-black drop-shadow-sm">{collectionItems.main.name}</p>
                 <p className="mt-1 text-[15px] font-medium italic leading-none text-black drop-shadow-sm">{collectionItems.main.price}</p>
               </div>
-            </div>
+            </Link>
             {/* top small + label pill */}
-            <div className="relative aspect-square overflow-hidden">
+            <Link href={`/produit/${collectionItems.top.slug}`} className="relative aspect-square overflow-hidden">
               <Image src={collectionItems.top.img} alt={collectionItems.top.name} fill className="object-cover" sizes="50vw" />
               <div className="absolute bottom-2 left-2 bg-black px-2.5 py-1.5">
                 <p className="text-[11px] font-bold leading-none text-white">{collectionItems.top.name}</p>
                 <p className="mt-0.5 text-[13px] font-medium italic leading-none text-white">{collectionItems.top.price}</p>
               </div>
-            </div>
+            </Link>
             {/* bottom small + label pill */}
-            <div className="relative aspect-square overflow-hidden">
+            <Link href={`/produit/${collectionItems.bottom.slug}`} className="relative aspect-square overflow-hidden">
               <Image src={collectionItems.bottom.img} alt={collectionItems.bottom.name} fill className="object-cover" sizes="50vw" />
               <div className="absolute bottom-2 left-2 bg-black px-2.5 py-1.5">
                 <p className="text-[11px] font-bold leading-none text-white">{collectionItems.bottom.name}</p>
                 <p className="mt-0.5 text-[13px] font-medium italic leading-none text-white">{collectionItems.bottom.price}</p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -114,13 +114,14 @@ export default function MobileHome() {
           {catalogueColumns.map((col, ci) => (
             <div key={ci} className="flex flex-col gap-3 sm:gap-4">
               {col.map((item) => (
-                <div
+                <Link
                   key={item.img}
+                  href={`/produit/${item.slug}`}
                   className="relative w-full overflow-hidden"
                   style={{ aspectRatio: `${item.w} / ${item.h}` }}
                 >
                   <Image src={item.img} alt="Produit du catalogue KULT" fill className="object-cover" sizes="33vw" />
-                </div>
+                </Link>
               ))}
             </div>
           ))}

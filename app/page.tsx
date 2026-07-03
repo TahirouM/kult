@@ -101,7 +101,9 @@ export default function Home() {
 
           {/* big image 435x432 at 455.5,1947 */}
           <FBox x={455.5} y={1947} w={435} h={432} className="overflow-hidden">
-            <Image src={collectionItems.main.img} alt={collectionItems.main.name} fill className="object-cover" />
+            <Link href={`/produit/${collectionItems.main.slug}`} className="block h-full w-full">
+              <Image src={collectionItems.main.img} alt={collectionItems.main.name} fill className="object-cover transition-transform duration-500 hover:scale-105" />
+            </Link>
           </FBox>
           {/* label on big image bottom-left */}
           <FBox x={480.5} y={2315} w={240}>
@@ -113,7 +115,9 @@ export default function Home() {
 
           {/* top small image 183x211 at 902.5,1947 */}
           <FBox x={902.5} y={1947} w={183} h={211} className="overflow-hidden">
-            <Image src={collectionItems.top.img} alt={collectionItems.top.name} fill className="object-cover" />
+            <Link href={`/produit/${collectionItems.top.slug}`} className="block h-full w-full">
+              <Image src={collectionItems.top.img} alt={collectionItems.top.name} fill className="object-cover transition-transform duration-500 hover:scale-105" />
+            </Link>
           </FBox>
           {/* Bougie Mimosa black label 187x89 at 1085.5,2069 */}
           <FBox x={1085.5} y={2069} w={187} h={89} className="bg-black">
@@ -125,7 +129,9 @@ export default function Home() {
 
           {/* bottom small image 183x211 at 902.5,2175 */}
           <FBox x={902.5} y={2175} w={183} h={211} className="overflow-hidden">
-            <Image src={collectionItems.bottom.img} alt={collectionItems.bottom.name} fill className="object-cover" />
+            <Link href={`/produit/${collectionItems.bottom.slug}`} className="block h-full w-full">
+              <Image src={collectionItems.bottom.img} alt={collectionItems.bottom.name} fill className="object-cover transition-transform duration-500 hover:scale-105" />
+            </Link>
           </FBox>
           {/* Diffuseur Mimosa black label 187x86 at 1085.5,2300 */}
           <FBox x={1085.5} y={2300} w={187} h={86} className="bg-black">
@@ -161,7 +167,9 @@ export default function Home() {
 
           {catalogue.map((c) => (
             <FBox key={`${c.x}-${c.y}`} x={c.x} y={c.y} w={c.w} h={c.h} className="overflow-hidden">
-              <Image src={c.img} alt="Produit du catalogue KULT" fill className="object-cover" />
+              <Link href={`/produit/${c.slug}`} className="block h-full w-full">
+                <Image src={c.img} alt="Produit du catalogue KULT" fill className="object-cover transition-transform duration-500 hover:scale-105" />
+              </Link>
             </FBox>
           ))}
 
