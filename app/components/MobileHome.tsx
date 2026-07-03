@@ -100,9 +100,9 @@ export default function MobileHome() {
       <section id="about" className="relative flex aspect-[1738/340] w-full items-center justify-center overflow-hidden scroll-mt-24">
         <Image src="/assets/about.png" alt="À propos de nous" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-kult-pink-soft/40" />
-        <span className="font-display relative z-10 rounded-full bg-black px-6 py-3 text-[22px] font-bold text-white sm:px-8 sm:py-4 sm:text-[32px]">
+        <Link href="/a-propos" className="font-display relative z-10 rounded-full bg-black px-6 py-3 text-[22px] font-bold text-white transition-opacity hover:opacity-90 sm:px-8 sm:py-4 sm:text-[32px]">
           A propos de nous
-        </span>
+        </Link>
       </section>
 
       {/* ===== Notre catalogue ===== */}

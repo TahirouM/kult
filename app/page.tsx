@@ -150,11 +150,11 @@ export default function Home() {
           </FBox>
           {/* translucent pink overlay */}
           <FBox x={0} y={2608} w={1728} h={340} style={{ background: "rgba(255,237,241,0.44)" }} />
-          {/* black pill 485x88 at 621,2734 */}
-          <FBox x={621} y={2734} w={485} h={88} className="rounded-[71px] bg-black">
-            <div className="flex h-full items-center justify-center">
+          {/* black pill 485x88 at 621,2734 → link to /a-propos */}
+          <FBox x={621} y={2734} w={485} h={88}>
+            <Link href="/a-propos" className="flex h-full w-full items-center justify-center rounded-[71px] bg-black transition-opacity hover:opacity-90">
               <span className="font-display text-[40px] font-bold leading-none text-white">A propos de nous</span>
-            </div>
+            </Link>
           </FBox>
 
           {/* ============ NOTRE CATALOGUE ============ */}

@@ -146,13 +146,7 @@ export default function BurgerMenu({
             </div>
           </div>
 
-          <a
-            href="#about"
-            onClick={goToSection("about")}
-            className="font-display block border-b border-black/15 py-4 text-[26px] font-bold text-black"
-          >
-            À propos de nous
-          </a>
+          <MenuLink href="/a-propos" label="À propos de nous" onClick={close} />
           <a
             href="#contact"
             onClick={goToSection("contact")}
